@@ -1,0 +1,130 @@
+<div class="row col-md-12 col-lg-12 col-sm-12 padding-top">
+    	<!-- if user is logged in, then display this-->
+    	{%if 'user_id' in session %}
+    	
+    	<div class="row">
+			<div class="row padding-top padding-bottom">
+				<div class="col-md-12 padding-none">
+					<a href="{{url_for('newSportItem', sport_id = sport.id )}}">
+						<button class="btn btn-default" id="new-menu-item">
+							<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Add Sport Item
+						</button>
+					</a>
+				</div>
+			<div class="col-md-7"></div>
+		</div>
+		{% endif %}
+		
+		<div class="row">
+			{% if items !=[] %}	
+	
+				<div class="col-sm-3 col-lg-3 col-md-3">
+					<p class="lead">Ball</p>
+						{% for i in items %}
+							{% if i.category == 'Ball' %}
+								<div class="thumbnail">
+									<div class="caption">
+										<h4>{{i.title}}</h4>
+										<p>{{i.description}}</p>
+										<h5 class="menu-price">{{i.price}}</h5>
+										{%if 'user_id' in session %}
+											<a href="{{url_for('editSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="edit-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Edit Sport Item
+											</button>
+											</a>
+											<a href="{{url_for('deleteSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="delete-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Delete Sport Item
+											</button>
+											</a>
+										{% endif %}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+				</div>
+			
+				<div class="col-sm-3 col-lg-3 col-md-3">
+					<p class="lead">Shoe</p>
+						{% for i in items %}
+							{% if i.category == 'Shoe' %}
+								<div class="thumbnail">
+									<div class="caption">
+										<h4>{{i.title}}</h4>
+										<p>{{i.description}}</p>
+										<h5 class="menu-price">{{i.price}}</h5>
+										{%if 'user_id' in session %}
+											<a href="{{url_for('editSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="edit-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Edit Sport Item
+											</button>
+											</a>
+											<a href="{{url_for('deleteSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="delete-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Delete Sport Item
+											</button>
+											</a>
+										{% endif %}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+				</div>
+
+				<div class="col-sm-3 col-lg-3 col-md-3">
+					<p class="lead">Shirt</p>
+						{% for i in items %}
+							{% if i.category == 'Shirt' %}
+								<div class="thumbnail">
+									<div class="caption">
+										<h4>{{i.title}}</h4>
+										<p>{{i.description}}</p>
+										<h5 class="menu-price">{{i.price}}</h5>
+										{%if 'user_id' in session %}
+											<a href="{{url_for('editSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="edit-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Edit Sport Item
+											</button>
+											</a>
+											<a href="{{url_for('deleteSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="delete-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Delete Sport Item
+											</button>
+											</a>
+										{% endif %}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+				</div>
+
+				<div class="col-sm-3 col-lg-3 col-md-3">
+					<p class="lead">Helmet</p>
+						{% for i in items %}
+							{% if i.category == 'Helmet' %}
+								<div class="thumbnail">
+									<div class="caption">
+										<h4>{{i.title}}</h4>
+										<p>{{i.description}}</p>
+										<h5 class="menu-price">{{i.price}}</h5>
+										{%if 'user_id' in session %}
+											<a href="{{url_for('editSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="edit-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Edit Sport Item
+											</button>
+											</a>
+											<a href="{{url_for('deleteSportItem', sport_id = sport.id, item_id = i.id)}}">
+											<button class="btn btn-default" id="delete-menu-item">
+												<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Delete Sport Item
+											</button>
+											</a>
+										{% endif %}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+				</div>
+			{% endif %}
+			</div>
+</div>

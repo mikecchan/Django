@@ -1,0 +1,37 @@
+<div class="row col-sm-12 col-lg-12 col-md-12 padding-top">
+	<p class="lead">Sports Category</p>
+	
+	{%if 'user_id' in session %}
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-4 padding-none">
+			<a href="{{url_for('newSport')}}">
+				<button class="btn btn-default" id="new-sport">
+					<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>Add Sport
+				</button>
+			</a>
+		</div>
+	</div>
+	{% endif %}
+	
+		{% for s in show_sports %}
+		<div class="row thumbnail col-sm-12 col-lg-12 col-md-12">
+			<a href = "{{url_for('showSportItems', sport_id = s.id)}}" class="list-group-item">
+				<h4>{{s.name}}</h4>
+			</a>
+			<div class="row col-sm-12 col-lg-12 col-md-12">
+				{%if 'user_id' in session %}
+					<button class="btn btn-default">
+						<a href="{{url_for('editSport', sport_id = s.id )}}" class = "col-sm-6 col-lg-6 col-md-6" id="edit-sport">
+							<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>Edit Sport
+						</a>
+					</button>
+					<button class="btn btn-default">
+						<a href="{{url_for('deleteSport', sport_id = s.id )}}" class = "col-sm-6 col-lg-6 col-md-6" id="delete-sport">
+							<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>Delete Sport
+						</a>
+					</button>
+				{% endif %}
+			</div>
+		</div>	
+		{% endfor %}
+</div>

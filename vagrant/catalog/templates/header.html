@@ -1,0 +1,22 @@
+<!-- Brand and toggle get grouped for better mobile display -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="col-xs-6 col-md-6 col-lg-6 nav navbar-nav">
+                <a class="navbar-brand" href="/">Sports Catalog Store Project</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse col-xs-6 col-md-6 col-lg-6 text-right pull-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    {%if 'user_id' not in session %}
+						<a href="{{url_for('showLogin')}}">
+							Click Here to Login
+						</a>
+					{% else %}
+						<a href="{{url_for('gdisconnect')}}">Logout </a>
+					{% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

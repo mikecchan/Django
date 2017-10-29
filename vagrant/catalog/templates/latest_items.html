@@ -1,0 +1,15 @@
+<div class="row col-md-12 padding-top">
+	<div class = "row">
+		<p class = "lead">Welcome to my Sports Item Catalog Project Website!  
+		In this project, I am demonstrating my understanding of CRUD
+		and Authentication/Authorization</p>
+	</div>
+	<div class = "row">
+		<p class="lead">Latest Items.</p>
+			{% for i in latest_items %}
+				<div class="caption">
+					<h4>{{i.title}}</h4>
+				</div>
+			{% endfor %}
+	</div>
+</div>
